@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #dc3545;
+  --color-secondary: #ffffff;
+  --color-dark: #212529;
+  --color-light: #f8f9fa;
+}
+
+body {
+  color: var(--color-dark);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-barlow {
+  font-family: var(--font-barlow);
+}
+
+.bg-hero {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.9), rgba(139, 0, 0, 0.8));
+  position: relative;
+}
+
+.bg-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Services background fade animation */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.animate-fadeInOut {
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
